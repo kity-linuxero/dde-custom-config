@@ -8,10 +8,14 @@ state=$(xinput list-props "$device" | grep "Device Enabled" | grep -o "[01]$")
 
 if [ $state == '1' ];then
 
+  echo "$device"
   xinput --disable "$device"
+  notify-send "Touchpad switched OFF" -i touchpad-disabled-symbolic
 
 else
 
+  echo "$device"
   xinput --enable "$device"
+  notify-send "Touchpad switched ON" -i input-touchpad-symbolic
 
 fi
