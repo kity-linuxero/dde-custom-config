@@ -1,21 +1,28 @@
 #!/bin/bash
 
-#xdotool key XF86TouchpadToggle
+FILE=/tmp/touchpad.dde
 
-device=$(xinput | grep "ELAN1200:00 04F3:3044 Touchpad" | grep -Eo "id\=[0-9]{1,2}" |grep -Eo "[0-9]{1,2}")
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else 
+    echo "$FILE does not exist."
+    echo 1 > $FILE
+fi
 
-state=$(xinput list-props "$device" | grep "Device Enabled" | grep -o "[01]$")
+VAR=`cat $FILE`
 
-if [ $state == '1' ];then
+echo $VAR
 
-  echo "$device"
-  xinput --disable "$device"
-  notify-send "Touchpad switched OFF" -i touchpad-disabled-symbolic
+if [[ "$VAR" -eq 1 ]]; then
 
+    gsettings set com.deepin.dde.touchpad touchpad-enabled false
+    notify-send "Touchpad switched OFF" -i touchpad-disabled-symbolic
+    echo 0 > $FILE
 else
-
-  echo "$device"
-  xinput --enable "$device"
-  notify-send "Touchpad switched ON" -i input-touchpad-symbolic
+   
+    gsettings set com.deepin.dde.touchpad touchpad-enabled true
+    notify-send "Touchpad switched ON" -i input-touchpad-symbolic
+    echo 1 > $FILE
 
 fi
+
