@@ -1,7 +1,7 @@
 # dde-custom-config
 My custom config for DDE Desktop
 
-Tested and work in Asus Zenbook UX410.
+Tested and work in Asus Zenbook UX410. Deepin Community 20.2.3
 
 ### Touchpad gesture path
 
