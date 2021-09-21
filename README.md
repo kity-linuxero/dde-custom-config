@@ -12,3 +12,7 @@ Tested and work in Asus Zenbook UX410. Deepin Community 20.2.3
 Add this line to $HOME/.config/mimeapps.list
 
 ```inode/directory = dde-file-manager.desktop;code.desktop;```
+
+### Disable Tapping draw
+
+```xinput set-prop 13 343 0```
