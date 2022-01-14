@@ -15,7 +15,7 @@ Add this line to $HOME/.config/mimeapps.list
 
 ### Disable Tapping draw
 
-```xinput set-prop 13 343 0```
+```echo "xinput set-prop 12 343 0" >> $HOME/.bashrc```
 
 ### Fix low rates Wifi
 
