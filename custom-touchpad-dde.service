@@ -1,0 +1,13 @@
+[Unit]
+Description=Custom Touchpad service
+After=network.target
+ 
+[Service]
+User=cristian
+WorkingDirectory=/home/cristian/Apps
+Type=simple
+ExecStart=/home/cristian/Apps/touch_toggle.sh
+GuessMainPID=no
+ 
+[Install]
+WantedBy=multi-user.target

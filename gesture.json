@@ -18,7 +18,7 @@
         },
         "Action": {
             "Type": "built-in",
-            "Action": "ToggleMaximize"
+            "Action": "Minimize"
         }
     },
     {
@@ -41,6 +41,17 @@
         "Action": {
             "Type": "built-in",
             "Action": "SplitWindowRight"
+        }
+    },
+    {
+        "Event": {
+            "Name": "tap",
+            "Direction": "none",
+            "Fingers": 3
+        },
+        "Action": {
+            "Type": "shortcut",
+            "Action": "xdotool click 2"
         }
     },
     {
@@ -140,16 +151,6 @@
         "Action": {
             "Type": "built-in",
             "Action": "SwitchWorkspace"
-        }
-    },
-    {   "Event": { 
-          "Name": "tap",
-          "Direction": "none",
-          "Fingers": 3
-     },
-        "Action": {
-            "Type": "commandline",
-            "Action": "xdotool click 2"
         }
     },
     {
